@@ -8,7 +8,7 @@ const watchVideo = (video) => video.addEventListener('error', () => {
   if (!video.parentElement.querySelector('.video-error')) {
     const note = document.createElement('p');
     note.className = 'video-error';
-    note.textContent = 'This video could not load. Reload the page or open the media file in the repository.';
+    note.textContent = 'This video could not load. Please reload the page.';
     video.parentElement.append(note);
   }
 });

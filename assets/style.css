@@ -36,3 +36,9 @@ body{font-family:Inter,"Segoe UI",-apple-system,BlinkMacSystemFont,sans-serif;ba
 
 .skip-link { top:10px; clip-path:inset(50%); transform:translateY(calc(-100% - 20px)); }
 .skip-link:focus { clip-path:none; transform:none; }
+
+.publication-header .hero-body { padding-top:64px; }
+.resource-placeholder { cursor:default; pointer-events:none; }
+.resource-svg { width:18px; height:18px; }
+.arxiv-icon { font-family:Georgia,serif; font-size:23px; line-height:1; }
+@media(max-width:720px) { .publication-header .hero-body { padding-top:44px; } }
