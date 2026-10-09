@@ -1,0 +1,31 @@
+{
+  "id": "hot3d-01",
+  "dataset": "hot3d",
+  "sequence": "P0012_0323d770",
+  "role": "test",
+  "fps": 30,
+  "frames": 81,
+  "frameStart": 1701,
+  "frameEnd": 1781,
+  "sampleId": "cam81/hot3d/test/P0012_0323d770/01701-01781",
+  "checkpointJob": 321,
+  "checkpointSha256": "c0a5d9a5b94d24e154cf1f19492b43f41731626de7871b501ec9dd77f956efc5",
+  "handInput": "Ground-truth boxes and visibility masks",
+  "intrinsics": "Dataset calibration supplied",
+  "prediction": "MANO pose, shape, translation, camera trajectory, dense scene pointmaps and contact probabilities are predicted by job321.",
+  "resetInterval": 20,
+  "ttt": true,
+  "seed": 42,
+  "handAlignment": "none",
+  "visibleHandFrames": [
+    81,
+    81
+  ],
+  "renderedHandFrames": 81,
+  "selection": "Chosen after visual quality review of genuine job321 predictions; no inference settings changed.",
+  "sceneFrames": 27,
+  "depthColorRange": [
+    0.2283771562576294,
+    1.4711264061927793
+  ]
+}

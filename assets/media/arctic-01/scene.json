@@ -1,0 +1,197 @@
+{
+  "version": 1,
+  "buffer": "scene.bin",
+  "arrays": {
+    "vertices": {
+      "byteOffset": 0,
+      "shape": [
+        50,
+        2,
+        778,
+        3
+      ],
+      "dtype": "<f4",
+      "bytes": 933600
+    },
+    "faces": {
+      "byteOffset": 933600,
+      "shape": [
+        2,
+        1538,
+        3
+      ],
+      "dtype": "<u2",
+      "bytes": 18456
+    },
+    "valid": {
+      "byteOffset": 952056,
+      "shape": [
+        50,
+        2
+      ],
+      "dtype": "|u1",
+      "bytes": 100
+    },
+    "contact": {
+      "byteOffset": 952156,
+      "shape": [
+        50,
+        2,
+        778
+      ],
+      "dtype": "<f4",
+      "bytes": 311200
+    },
+    "cameras": {
+      "byteOffset": 1263356,
+      "shape": [
+        50,
+        4,
+        4
+      ],
+      "dtype": "<f4",
+      "bytes": 3200
+    },
+    "points": {
+      "byteOffset": 1266556,
+      "shape": [
+        50,
+        1800,
+        3
+      ],
+      "dtype": "<f4",
+      "bytes": 1080000
+    },
+    "colors": {
+      "byteOffset": 2346556,
+      "shape": [
+        50,
+        1800,
+        3
+      ],
+      "dtype": "|u1",
+      "bytes": 270000
+    },
+    "pointCounts": {
+      "byteOffset": 2616556,
+      "shape": [
+        50
+      ],
+      "dtype": "<u4",
+      "bytes": 200
+    }
+  },
+  "frames": 50,
+  "fps": 10,
+  "sourceOffsets": [
+    0,
+    3,
+    6,
+    9,
+    12,
+    15,
+    18,
+    21,
+    24,
+    27,
+    30,
+    33,
+    36,
+    39,
+    42,
+    45,
+    48,
+    51,
+    54,
+    57,
+    60,
+    63,
+    66,
+    69,
+    72,
+    75,
+    78,
+    81,
+    84,
+    87,
+    90,
+    93,
+    96,
+    99,
+    102,
+    105,
+    108,
+    111,
+    114,
+    117,
+    120,
+    123,
+    126,
+    129,
+    132,
+    135,
+    138,
+    141,
+    144,
+    147
+  ],
+  "sourceFrameIds": [
+    152,
+    155,
+    158,
+    161,
+    164,
+    167,
+    170,
+    173,
+    176,
+    179,
+    182,
+    185,
+    188,
+    191,
+    194,
+    197,
+    200,
+    203,
+    206,
+    209,
+    212,
+    215,
+    218,
+    221,
+    224,
+    227,
+    230,
+    233,
+    236,
+    239,
+    242,
+    245,
+    248,
+    251,
+    254,
+    257,
+    260,
+    263,
+    266,
+    269,
+    272,
+    275,
+    278,
+    281,
+    284,
+    287,
+    290,
+    293,
+    296,
+    299
+  ],
+  "units": "meters",
+  "coordinateSystem": "OpenCV first-clip-camera world",
+  "normalization": "One inverse-first-predicted-camera rigid transform, no pose or scale alignment",
+  "cloudSampling": "Per-frame predicted pointmap, spatial stride 5; confidence >=1.5; up to 1800 points. No temporal fusion.",
+  "contact": "Predicted per-vertex contact probabilities; continuous 0 to 1",
+  "checkpointJob": 321,
+  "checkpointSha256": "c0a5d9a5b94d24e154cf1f19492b43f41731626de7871b501ec9dd77f956efc5"
+}

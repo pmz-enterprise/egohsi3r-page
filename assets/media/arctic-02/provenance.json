@@ -1,0 +1,31 @@
+{
+  "id": "arctic-02",
+  "dataset": "arctic",
+  "sequence": "s05/capsulemachine_use_02",
+  "role": "test",
+  "fps": 30,
+  "frames": 81,
+  "frameStart": 164,
+  "frameEnd": 244,
+  "sampleId": "cam81/arctic/test/s05/capsulemachine_use_02/00164-00244",
+  "checkpointJob": 321,
+  "checkpointSha256": "c0a5d9a5b94d24e154cf1f19492b43f41731626de7871b501ec9dd77f956efc5",
+  "handInput": "Ground-truth boxes and visibility masks",
+  "intrinsics": "Dataset calibration supplied",
+  "prediction": "MANO pose, shape, translation, camera trajectory, dense scene pointmaps and contact probabilities are predicted by job321.",
+  "resetInterval": 20,
+  "ttt": true,
+  "seed": 42,
+  "handAlignment": "none",
+  "visibleHandFrames": [
+    81,
+    81
+  ],
+  "renderedHandFrames": 81,
+  "selection": "Chosen after visual quality review of genuine job321 predictions; no inference settings changed.",
+  "sceneFrames": 27,
+  "depthColorRange": [
+    0.5113209366798401,
+    0.818144690990448
+  ]
+}

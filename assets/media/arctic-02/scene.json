@@ -1,0 +1,151 @@
+{
+  "version": 1,
+  "buffer": "scene.bin",
+  "arrays": {
+    "vertices": {
+      "byteOffset": 0,
+      "shape": [
+        27,
+        2,
+        778,
+        3
+      ],
+      "dtype": "<f4",
+      "bytes": 504144
+    },
+    "faces": {
+      "byteOffset": 504144,
+      "shape": [
+        2,
+        1538,
+        3
+      ],
+      "dtype": "<u2",
+      "bytes": 18456
+    },
+    "valid": {
+      "byteOffset": 522600,
+      "shape": [
+        27,
+        2
+      ],
+      "dtype": "|u1",
+      "bytes": 54
+    },
+    "contact": {
+      "byteOffset": 522656,
+      "shape": [
+        27,
+        2,
+        778
+      ],
+      "dtype": "<f4",
+      "bytes": 168048
+    },
+    "cameras": {
+      "byteOffset": 690704,
+      "shape": [
+        27,
+        4,
+        4
+      ],
+      "dtype": "<f4",
+      "bytes": 1728
+    },
+    "points": {
+      "byteOffset": 692432,
+      "shape": [
+        27,
+        1800,
+        3
+      ],
+      "dtype": "<f4",
+      "bytes": 583200
+    },
+    "colors": {
+      "byteOffset": 1275632,
+      "shape": [
+        27,
+        1800,
+        3
+      ],
+      "dtype": "|u1",
+      "bytes": 145800
+    },
+    "pointCounts": {
+      "byteOffset": 1421432,
+      "shape": [
+        27
+      ],
+      "dtype": "<u4",
+      "bytes": 108
+    }
+  },
+  "frames": 27,
+  "fps": 10,
+  "sourceOffsets": [
+    0,
+    3,
+    6,
+    9,
+    12,
+    15,
+    18,
+    21,
+    24,
+    27,
+    30,
+    33,
+    36,
+    39,
+    42,
+    45,
+    48,
+    51,
+    54,
+    57,
+    60,
+    63,
+    66,
+    69,
+    72,
+    75,
+    78
+  ],
+  "sourceFrameIds": [
+    164,
+    167,
+    170,
+    173,
+    176,
+    179,
+    182,
+    185,
+    188,
+    191,
+    194,
+    197,
+    200,
+    203,
+    206,
+    209,
+    212,
+    215,
+    218,
+    221,
+    224,
+    227,
+    230,
+    233,
+    236,
+    239,
+    242
+  ],
+  "units": "meters",
+  "coordinateSystem": "OpenCV first-clip-camera world",
+  "normalization": "One inverse-first-predicted-camera rigid transform, no pose or scale alignment",
+  "cloudSampling": "Per-frame predicted pointmap, spatial stride 5; confidence >=1.5; up to 1800 points. No temporal fusion.",
+  "contact": "Predicted per-vertex contact probabilities; continuous 0 to 1",
+  "checkpointJob": 321,
+  "checkpointSha256": "c0a5d9a5b94d24e154cf1f19492b43f41731626de7871b501ec9dd77f956efc5"
+}

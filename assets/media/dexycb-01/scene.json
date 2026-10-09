@@ -1,0 +1,145 @@
+{
+  "version": 1,
+  "buffer": "scene.bin",
+  "arrays": {
+    "vertices": {
+      "byteOffset": 0,
+      "shape": [
+        24,
+        2,
+        778,
+        3
+      ],
+      "dtype": "<f4",
+      "bytes": 448128
+    },
+    "faces": {
+      "byteOffset": 448128,
+      "shape": [
+        2,
+        1538,
+        3
+      ],
+      "dtype": "<u2",
+      "bytes": 18456
+    },
+    "valid": {
+      "byteOffset": 466584,
+      "shape": [
+        24,
+        2
+      ],
+      "dtype": "|u1",
+      "bytes": 48
+    },
+    "contact": {
+      "byteOffset": 466632,
+      "shape": [
+        24,
+        2,
+        778
+      ],
+      "dtype": "<f4",
+      "bytes": 149376
+    },
+    "cameras": {
+      "byteOffset": 616008,
+      "shape": [
+        24,
+        4,
+        4
+      ],
+      "dtype": "<f4",
+      "bytes": 1536
+    },
+    "points": {
+      "byteOffset": 617544,
+      "shape": [
+        24,
+        1800,
+        3
+      ],
+      "dtype": "<f4",
+      "bytes": 518400
+    },
+    "colors": {
+      "byteOffset": 1135944,
+      "shape": [
+        24,
+        1800,
+        3
+      ],
+      "dtype": "|u1",
+      "bytes": 129600
+    },
+    "pointCounts": {
+      "byteOffset": 1265544,
+      "shape": [
+        24
+      ],
+      "dtype": "<u4",
+      "bytes": 96
+    }
+  },
+  "frames": 24,
+  "fps": 10,
+  "sourceOffsets": [
+    0,
+    3,
+    6,
+    9,
+    12,
+    15,
+    18,
+    21,
+    24,
+    27,
+    30,
+    33,
+    36,
+    39,
+    42,
+    45,
+    48,
+    51,
+    54,
+    57,
+    60,
+    63,
+    66,
+    69
+  ],
+  "sourceFrameIds": [
+    0,
+    3,
+    6,
+    9,
+    12,
+    15,
+    18,
+    21,
+    24,
+    27,
+    30,
+    33,
+    36,
+    39,
+    42,
+    45,
+    48,
+    51,
+    54,
+    57,
+    60,
+    63,
+    66,
+    69
+  ],
+  "units": "meters",
+  "coordinateSystem": "OpenCV first-clip-camera world",
+  "normalization": "One inverse-first-predicted-camera rigid transform, no pose or scale alignment",
+  "cloudSampling": "Per-frame predicted pointmap, spatial stride 5; confidence >=1.5; up to 1800 points. No temporal fusion.",
+  "contact": "Predicted per-vertex contact probabilities; continuous 0 to 1",
+  "checkpointJob": 321,
+  "checkpointSha256": "c0a5d9a5b94d24e154cf1f19492b43f41731626de7871b501ec9dd77f956efc5"
+}
