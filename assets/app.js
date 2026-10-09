@@ -126,12 +126,12 @@ try {
   function createComparison(clip, space) {
     const card = document.createElement('article');
     card.className = 'comparison-card'; card.dataset.space = space; card.dataset.clip = clip.id;
-    const heading = document.createElement('h3'); heading.className = 'comparison-clip-title'; heading.textContent = clip.label;
     const video = document.createElement('video');
     Object.assign(video, { muted: true, loop: true, playsInline: true, preload: 'auto' });
     video.className = 'comparison-source'; video.src = clip.grid.video;
     video.setAttribute('aria-hidden', 'true'); watchVideo(video);
     const grid = document.createElement('div'); grid.className = `method-grid ${space}-method-grid`;
+    grid.style.setProperty('--method-count', String(clip.grid.panels.length));
     const panels = clip.grid.panels.map(panel => {
       const figure = document.createElement('figure'); figure.className = 'method-panel'; figure.dataset.method = panel.method;
       if (panel.method === 'ours') figure.classList.add('ours');
@@ -151,7 +151,7 @@ try {
     const speed = document.createElement('select'); speed.setAttribute('aria-label', `${clip.label} playback speed`);
     for (const value of ['0.5', '1']) { const option = document.createElement('option'); option.value = value; option.textContent = `${value}×`; option.selected = value === '1'; speed.append(option); }
     speedLabel.append(speed); controls.append(play, timeline, clock, speedLabel);
-    card.append(heading, grid, video, controls);
+    card.append(grid, video, controls);
     $(`${space}-comparison-list`).append(card);
     function draw() {
       if (video.readyState < 2) return;
@@ -189,8 +189,26 @@ try {
     speed.addEventListener('change', () => { video.playbackRate = Number(speed.value); });
     document.addEventListener('visibilitychange', () => { if (document.hidden) pause(); });
     new IntersectionObserver(entries => { if (!entries[0].isIntersecting) pause(); }).observe(card);
+    return { clip, card, video, pause, draw };
   }
-  for (const space of ['camera', 'world']) for (const clip of config[space]) createComparison(clip, space);
+  for (const space of ['camera', 'world']) {
+    const select = $(`${space}-clip`);
+    const comparisons = config[space].map(clip => {
+      const option = document.createElement('option'); option.value = clip.id; option.textContent = clip.label;
+      select.append(option);
+      return createComparison(clip, space);
+    });
+    function chooseSequence() {
+      for (const comparison of comparisons) {
+        const selected = comparison.clip.id === select.value;
+        comparison.card.hidden = !selected;
+        comparison.pause();
+        if (selected) { comparison.card.querySelector('.method-grid').scrollLeft = 0; comparison.draw(); }
+      }
+    }
+    select.addEventListener('change', chooseSequence);
+    chooseSequence();
+  }
 } catch (error) {
   console.error(error);
 }
