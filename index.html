@@ -51,15 +51,14 @@
     <div class="playback"><button id="scene-play" class="play-button" type="button" aria-label="Play 3D animation">Play</button><input id="scene-time" type="range" min="0" max="1" value="0" step="1" aria-label="3D animation frame"><output id="scene-frame">Frame —</output></div>
   </div>
 </div></section>
-<section class="container section" id="comparisons">
-  <div class="section-intro"><div><h2>Comparisons with prior methods</h2></div></div>
-  <div class="toolbar comparison-toolbar"><div class="tabs" role="tablist" aria-label="Comparison coordinate space"><button id="camera-tab" role="tab" aria-selected="true" type="button" data-space="camera">Camera space</button><button id="world-tab" role="tab" aria-selected="false" type="button" data-space="world">World space</button></div><div class="comparison-selects"><label class="select-label">Clip <select id="compare-clip"></select></label><label class="select-label">Compare with <select id="compare-method"></select></label></div></div>
-  <div class="comparison-player" id="comparison-grid">
-    <div class="comparison-labels"><span>Input RGB</span><span id="baseline-label">Baseline</span><span class="ours-label">EgoHSI3R</span></div>
-    <video id="compare-video" muted playsinline loop preload="metadata" aria-label="Synchronized input, baseline and EgoHSI3R comparison"></video>
-  </div>
-  <div class="playback compare-playback"><button id="compare-play" class="play-button" type="button" aria-label="Play synchronized comparison">Play</button><input id="compare-time" type="range" min="0" max="1000" value="0" step="1" aria-label="Comparison timeline"><output id="compare-clock">0.00 s</output><label>Speed <select id="compare-speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option></select></label></div>
+<section class="container section comparison-section" id="camera-comparisons">
+  <div class="section-intro"><h2>Camera-space comparisons</h2></div>
+  <div class="comparison-list" id="camera-comparison-list"></div>
 </section>
+<section class="world-comparison-section"><div class="container section comparison-section" id="world-comparisons">
+  <div class="section-intro"><h2>World-space comparisons</h2></div>
+  <div class="comparison-list" id="world-comparison-list"></div>
+</div></section>
 
 </main>
 <footer class="footer"><div class="container is-max-desktop has-text-centered"><p>Template: <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener">Academic Project Page Template</a> · <a href="https://nerfies.github.io/" target="_blank" rel="noopener">Nerfies</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a></p></div></footer>

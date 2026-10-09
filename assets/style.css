@@ -42,3 +42,18 @@ body{font-family:Inter,"Segoe UI",-apple-system,BlinkMacSystemFont,sans-serif;ba
 .resource-svg { width:18px; height:18px; }
 .arxiv-icon { font-family:Georgia,serif; font-size:23px; line-height:1; }
 @media(max-width:720px) { .publication-header .hero-body { padding-top:44px; } }
+
+.comparison-list { display:grid; gap:40px; }
+.comparison-card { position:relative; min-width:0; }
+.comparison-clip-title { margin:0 0 12px; font-size:13px; font-weight:600; color:var(--muted); }
+.method-grid { display:grid; gap:12px; }
+.camera-method-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.world-method-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.method-panel { min-width:0; margin:0; overflow:hidden; border:1px solid var(--line); border-radius:10px; background:#f9f9f9; }
+.method-panel figcaption { padding:10px 12px; text-align:center; font-size:12px; font-weight:600; background:#fff; }
+.method-panel.ours { border-color:#a6bef7; }
+.method-panel.ours figcaption { color:var(--accent); background:#eff6ff; }
+.method-panel canvas { display:block; width:100%; height:auto; aspect-ratio:1; }
+.comparison-source { position:absolute; left:0; bottom:0; width:1px; height:1px; opacity:0; pointer-events:none; }
+.world-comparison-section { background:#f8fafc; border-top:1px solid var(--line); }
+@media(max-width:720px) { .camera-method-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .method-grid { gap:8px; } .method-panel figcaption { font-size:10px; padding:8px 5px; } .comparison-list { gap:30px; } }

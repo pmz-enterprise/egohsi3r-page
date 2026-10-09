@@ -4,7 +4,6 @@
     "wilor": "WiLoR",
     "hawor": "HaWoR",
     "handflow": "HandFlow",
-    "ace": "ACE-Ego-Hand (K)",
     "ours": "EgoHSI3R",
     "gt": "Ground truth",
     "rgb": "Input RGB"
@@ -23,18 +22,50 @@
         "handflow": "assets/media/camera-hot3d-01/handflow.mp4",
         "gt": "assets/media/camera-hot3d-01/gt.mp4"
       },
-      "composites": {
-        "hamer": "assets/media/camera-hot3d-01/hamer-comparison.mp4",
-        "wilor": "assets/media/camera-hot3d-01/wilor-comparison.mp4",
-        "hawor": "assets/media/camera-hot3d-01/hawor-comparison.mp4",
-        "handflow": "assets/media/camera-hot3d-01/handflow-comparison.mp4",
-        "gt": "assets/media/camera-hot3d-01/gt-comparison.mp4"
-      },
       "frames": 81,
       "fps": 30,
       "sourceFrameStart": 1701,
       "sourceFrameEnd": 1781,
-      "synchronization": "Three panels are encoded together, preserving every source frame."
+      "synchronization": "All methods are encoded into one video frame and displayed as responsive panels.",
+      "grid": {
+        "video": "assets/media/camera-hot3d-01/all-methods.mp4",
+        "columns": 3,
+        "rows": 2,
+        "cellWidth": 512,
+        "cellHeight": 512,
+        "panels": [
+          {
+            "method": "hamer",
+            "label": "HaMeR",
+            "index": 0
+          },
+          {
+            "method": "wilor",
+            "label": "WiLoR",
+            "index": 1
+          },
+          {
+            "method": "hawor",
+            "label": "HaWoR",
+            "index": 2
+          },
+          {
+            "method": "handflow",
+            "label": "HandFlow",
+            "index": 3
+          },
+          {
+            "method": "gt",
+            "label": "Ground truth",
+            "index": 4
+          },
+          {
+            "method": "ours",
+            "label": "EgoHSI3R",
+            "index": 5
+          }
+        ]
+      }
     },
     {
       "id": "hot3d-02",
@@ -49,18 +80,50 @@
         "handflow": "assets/media/camera-hot3d-02/handflow.mp4",
         "gt": "assets/media/camera-hot3d-02/gt.mp4"
       },
-      "composites": {
-        "hamer": "assets/media/camera-hot3d-02/hamer-comparison.mp4",
-        "wilor": "assets/media/camera-hot3d-02/wilor-comparison.mp4",
-        "hawor": "assets/media/camera-hot3d-02/hawor-comparison.mp4",
-        "handflow": "assets/media/camera-hot3d-02/handflow-comparison.mp4",
-        "gt": "assets/media/camera-hot3d-02/gt-comparison.mp4"
-      },
       "frames": 81,
       "fps": 30,
       "sourceFrameStart": 2025,
       "sourceFrameEnd": 2105,
-      "synchronization": "Three panels are encoded together, preserving every source frame."
+      "synchronization": "All methods are encoded into one video frame and displayed as responsive panels.",
+      "grid": {
+        "video": "assets/media/camera-hot3d-02/all-methods.mp4",
+        "columns": 3,
+        "rows": 2,
+        "cellWidth": 512,
+        "cellHeight": 512,
+        "panels": [
+          {
+            "method": "hamer",
+            "label": "HaMeR",
+            "index": 0
+          },
+          {
+            "method": "wilor",
+            "label": "WiLoR",
+            "index": 1
+          },
+          {
+            "method": "hawor",
+            "label": "HaWoR",
+            "index": 2
+          },
+          {
+            "method": "handflow",
+            "label": "HandFlow",
+            "index": 3
+          },
+          {
+            "method": "gt",
+            "label": "Ground truth",
+            "index": 4
+          },
+          {
+            "method": "ours",
+            "label": "EgoHSI3R",
+            "index": 5
+          }
+        ]
+      }
     }
   ],
   "world": [
@@ -75,16 +138,11 @@
         "hawor": "assets/media/world-arctic-01/hawor.mp4",
         "gt": "assets/media/world-arctic-01/gt.mp4"
       },
-      "composites": {
-        "handflow": "assets/media/world-arctic-01/handflow-comparison.mp4",
-        "hawor": "assets/media/world-arctic-01/hawor-comparison.mp4",
-        "gt": "assets/media/world-arctic-01/gt-comparison.mp4"
-      },
       "frames": 150,
       "fps": 30,
       "sourceFrameStart": 152,
       "sourceFrameEnd": 301,
-      "synchronization": "Three panels are encoded together, preserving every source frame.",
+      "synchronization": "All methods are encoded into one video frame and displayed as responsive panels.",
       "worldDisplay": {
         "eye": [
           -1.125069499015808,
@@ -125,6 +183,35 @@
           "ours": "EgoHSI3R",
           "gt": "GT"
         }
+      },
+      "grid": {
+        "video": "assets/media/world-arctic-01/all-methods.mp4",
+        "columns": 2,
+        "rows": 2,
+        "cellWidth": 512,
+        "cellHeight": 512,
+        "panels": [
+          {
+            "method": "handflow",
+            "label": "HandFlow",
+            "index": 0
+          },
+          {
+            "method": "hawor",
+            "label": "HaWoR",
+            "index": 1
+          },
+          {
+            "method": "gt",
+            "label": "Ground truth",
+            "index": 2
+          },
+          {
+            "method": "ours",
+            "label": "EgoHSI3R",
+            "index": 3
+          }
+        ]
       }
     }
   ]
