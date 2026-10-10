@@ -1,6 +1,7 @@
 import { ReconstructionViewer } from './viewer.js';
 
 const $ = (id) => document.getElementById(id);
+const PLAYBACK_RATE = 0.5;
 const datasetNames = { arctic: 'ARCTIC', hot3d: 'HOT3D', dexycb: 'DexYCB', h2o: 'H2O', taco: 'TACO' };
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 let teaserPlaying = !reducedMotion;
@@ -35,7 +36,7 @@ try {
     const card = document.createElement('article'); card.className = 'teaser-card';
     const title = document.createElement('h2'); title.textContent = name;
     const video = document.createElement('video');
-    Object.assign(video, { muted: true, loop: true, playsInline: true, preload: 'metadata' });
+    Object.assign(video, { muted: true, loop: true, playsInline: true, defaultPlaybackRate: PLAYBACK_RATE, playbackRate: PLAYBACK_RATE, preload: 'metadata' });
     video.dataset.preview = String(teaserPlaying);
     video.src = `assets/media/${example.id}/hands.mp4`;
     video.poster = `assets/media/${example.id}/poster.jpg`;
@@ -67,7 +68,7 @@ try {
       const card = document.createElement('article');
       card.className = `example-card ${mode === 'channels' ? 'channels' : ''}`;
       const video = document.createElement('video');
-      Object.assign(video, { muted: true, loop: true, playsInline: true, controls: true, preload: 'metadata' });
+      Object.assign(video, { muted: true, loop: true, playsInline: true, defaultPlaybackRate: PLAYBACK_RATE, playbackRate: PLAYBACK_RATE, controls: true, preload: 'metadata' });
       video.dataset.preview = 'true';
       video.src = `assets/media/${e.id}/${mode}.mp4`;
       video.poster = `assets/media/${e.id}/${mode === 'channels' ? 'channels.jpg' : 'poster.jpg'}`;
@@ -106,7 +107,7 @@ try {
     const option = document.createElement('option'); option.value = e.id; option.textContent = `${datasetNames[e.dataset]} · ${e.id.split('-').at(-1)}`; $('scene-select').append(option);
   }
   try {
-    viewer = new ReconstructionViewer();
+    viewer = new ReconstructionViewer({playbackRate: PLAYBACK_RATE});
     $('scene-select').addEventListener('change', () => viewer.load($('scene-select').value));
     await viewer.load(examples[0].id);
   } catch (error) {
@@ -127,7 +128,7 @@ try {
     const card = document.createElement('article');
     card.className = 'comparison-card'; card.dataset.space = space; card.dataset.clip = clip.id;
     const video = document.createElement('video');
-    Object.assign(video, { muted: true, loop: true, playsInline: true, preload: 'auto' });
+    Object.assign(video, { muted: true, loop: true, playsInline: true, defaultPlaybackRate: PLAYBACK_RATE, playbackRate: PLAYBACK_RATE, preload: 'auto' });
     video.className = 'comparison-source'; video.src = clip.grid.video;
     video.setAttribute('aria-hidden', 'true'); watchVideo(video);
     const grid = document.createElement('div'); grid.className = `method-grid ${space}-method-grid`;
@@ -149,7 +150,7 @@ try {
     const clock = document.createElement('output'); clock.textContent = '0.00 s';
     const speedLabel = document.createElement('label'); speedLabel.textContent = 'Speed ';
     const speed = document.createElement('select'); speed.setAttribute('aria-label', `${clip.label} playback speed`);
-    for (const value of ['0.5', '1']) { const option = document.createElement('option'); option.value = value; option.textContent = `${value}×`; option.selected = value === '1'; speed.append(option); }
+    for (const value of [String(PLAYBACK_RATE / 2), String(PLAYBACK_RATE)]) { const option = document.createElement('option'); option.value = value; option.textContent = `${value}×`; option.selected = Number(value) === PLAYBACK_RATE; speed.append(option); }
     speedLabel.append(speed); controls.append(play, timeline, clock, speedLabel);
     card.append(grid, video, controls);
     $(`${space}-comparison-list`).append(card);

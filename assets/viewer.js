@@ -7,7 +7,8 @@ const contactColor = [1,0.08,0.24];
 const arrayTypes = { '<f4': Float32Array, '<u2': Uint16Array, '|u1': Uint8Array, '<u4': Uint32Array };
 
 export class ReconstructionViewer {
-  constructor() {
+  constructor({playbackRate=1}={}) {
+    this.playbackRate=playbackRate;
     this.canvas = $('scene-canvas');
     this.renderer = new THREE.WebGLRenderer({canvas:this.canvas,antialias:true,alpha:false});
     this.renderer.setPixelRatio(Math.min(devicePixelRatio,2));
@@ -39,7 +40,11 @@ export class ReconstructionViewer {
     const animate=(now) => {
       this.animation=requestAnimationFrame(animate);
       if(!this.visible)return;
-      if(this.meta&&this.playing&&now-this.lastStep>=1000/this.meta.fps){this.frame=(this.frame+Math.floor((now-this.lastStep)*this.meta.fps/1000))%this.meta.frames;this.lastStep=now;this.update();}
+      if(this.meta&&this.playing){
+        const frameDuration=1000/(this.meta.fps*this.playbackRate);
+        const steps=Math.floor((now-this.lastStep)/frameDuration);
+        if(steps>0){this.frame=(this.frame+steps)%this.meta.frames;this.lastStep+=steps*frameDuration;this.update();}
+      }
       this.controls.update();this.renderer.render(this.scene,this.camera);
     };
     this.visible=true;this.visibilityObserver=new IntersectionObserver((entries)=>{this.visible=entries[0].isIntersecting;this.lastStep=performance.now();},{threshold:0});this.visibilityObserver.observe(this.canvas);

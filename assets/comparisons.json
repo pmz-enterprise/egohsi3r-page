@@ -66,64 +66,6 @@
           }
         ]
       }
-    },
-    {
-      "id": "hot3d-02",
-      "label": "HOT3D \u00b7 02",
-      "sampleId": "cam81/hot3d/test/P0012_c4353c31/02025-02105",
-      "rgb": "assets/media/hot3d-02/rgb.mp4",
-      "ours": "assets/media/hot3d-02/hands.mp4",
-      "methods": {
-        "hamer": "assets/media/camera-hot3d-02/hamer.mp4",
-        "wilor": "assets/media/camera-hot3d-02/wilor.mp4",
-        "hawor": "assets/media/camera-hot3d-02/hawor.mp4",
-        "handflow": "assets/media/camera-hot3d-02/handflow.mp4",
-        "gt": "assets/media/camera-hot3d-02/gt.mp4"
-      },
-      "frames": 81,
-      "fps": 30,
-      "sourceFrameStart": 2025,
-      "sourceFrameEnd": 2105,
-      "synchronization": "All methods are encoded into one video frame and displayed as responsive panels.",
-      "grid": {
-        "video": "assets/media/camera-hot3d-02/all-methods.mp4",
-        "columns": 3,
-        "rows": 2,
-        "cellWidth": 512,
-        "cellHeight": 512,
-        "panels": [
-          {
-            "method": "hamer",
-            "label": "HaMeR",
-            "index": 0
-          },
-          {
-            "method": "wilor",
-            "label": "WiLoR",
-            "index": 1
-          },
-          {
-            "method": "hawor",
-            "label": "HaWoR",
-            "index": 2
-          },
-          {
-            "method": "handflow",
-            "label": "HandFlow",
-            "index": 3
-          },
-          {
-            "method": "gt",
-            "label": "Ground truth",
-            "index": 4
-          },
-          {
-            "method": "ours",
-            "label": "EgoHSI3R",
-            "index": 5
-          }
-        ]
-      }
     }
   ],
   "world": [
