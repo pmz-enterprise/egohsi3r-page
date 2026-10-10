@@ -27,5 +27,6 @@
   "depthColorRange": [
     0.5113209366798401,
     0.818144690990448
-  ]
+  ],
+  "interactive3d": false
 }

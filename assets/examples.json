@@ -28,7 +28,8 @@
     "depthColorRange": [
       0.5283443927764893,
       0.7302625775337219
-    ]
+    ],
+    "interactive3d": false
   },
   {
     "id": "arctic-02",
@@ -59,7 +60,8 @@
     "depthColorRange": [
       0.5113209366798401,
       0.818144690990448
-    ]
+    ],
+    "interactive3d": false
   },
   {
     "id": "hot3d-01",
@@ -90,7 +92,8 @@
     "depthColorRange": [
       0.2283771562576294,
       1.4711264061927793
-    ]
+    ],
+    "interactive3d": true
   },
   {
     "id": "hot3d-02",
@@ -121,7 +124,8 @@
     "depthColorRange": [
       0.24779357075691222,
       1.4513356947898859
-    ]
+    ],
+    "interactive3d": true
   },
   {
     "id": "dexycb-01",
@@ -152,7 +156,8 @@
     "depthColorRange": [
       0.5561299026012421,
       9.203497886657715
-    ]
+    ],
+    "interactive3d": true
   },
   {
     "id": "dexycb-02",
@@ -183,7 +188,8 @@
     "depthColorRange": [
       0.48021112382411957,
       9.019322395324707
-    ]
+    ],
+    "interactive3d": true
   },
   {
     "id": "h2o-01",
@@ -214,7 +220,8 @@
     "depthColorRange": [
       0.2794377064704895,
       2.268281607627869
-    ]
+    ],
+    "interactive3d": true
   },
   {
     "id": "h2o-02",
@@ -245,7 +252,8 @@
     "depthColorRange": [
       0.3789687168598175,
       0.8506244790554047
-    ]
+    ],
+    "interactive3d": true
   },
   {
     "id": "taco-01",
@@ -276,7 +284,8 @@
     "depthColorRange": [
       0.4864613825082779,
       1.6645202589035044
-    ]
+    ],
+    "interactive3d": true
   },
   {
     "id": "taco-02",
@@ -307,6 +316,7 @@
     "depthColorRange": [
       0.4658836168050766,
       1.3921005272865297
-    ]
+    ],
+    "interactive3d": true
   }
 ]

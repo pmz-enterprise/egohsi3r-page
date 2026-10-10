@@ -1,4 +1,4 @@
-import { ReconstructionViewer } from './viewer.js?v=20261010-overview-row';
+import { ReconstructionViewer } from './viewer.js?v=20261010-interactive-scenes';
 
 const $ = (id) => document.getElementById(id);
 const PLAYBACK_RATE = 0.5;
@@ -21,9 +21,10 @@ const observer = new IntersectionObserver((entries) => {
 }, {threshold: 0.2});
 
 try {
-  const response = await fetch('assets/examples.json?v=20261010-overview-row');
+  const response = await fetch('assets/examples.json?v=20261010-interactive-scenes');
   if (!response.ok) throw new Error('Example manifest unavailable');
   const examples = await response.json();
+  const sceneExamples = examples.filter(example => example.interactive3d);
   function mediaStage(video, poster, className = '') {
     const stage = document.createElement('div');
     stage.className = `media-stage ${className}`;
@@ -79,13 +80,17 @@ try {
       const h = document.createElement('h3'); h.textContent = `${datasetNames[e.dataset]} · ${e.id.split('-').at(-1)}`;
      
       copy.append(h);
-      const button = document.createElement('button'); button.type = 'button'; button.textContent = 'Explore in 3D ↗';
-      button.addEventListener('click', async () => {
-        $('scene-select').value = e.id;
-        $('explore').scrollIntoView({behavior: reducedMotion ? 'instant' : 'smooth'});
-        await viewer?.load(e.id);
-      });
-      caption.append(copy, button); card.append(mediaStage(video, video.poster), caption); $('gallery').append(card); observer.observe(video);
+      caption.append(copy);
+      if (e.interactive3d) {
+        const button = document.createElement('button'); button.type = 'button'; button.textContent = 'Explore in 3D ↗';
+        button.addEventListener('click', async () => {
+          $('scene-select').value = e.id;
+          $('explore').scrollIntoView({behavior: reducedMotion ? 'instant' : 'smooth'});
+          await viewer?.load(e.id);
+        });
+        caption.append(button);
+      }
+      card.append(mediaStage(video, video.poster), caption); $('gallery').append(card); observer.observe(video);
     }
     for (const b of $('dataset-tabs').children) b.setAttribute('aria-selected', String(b.dataset.dataset === dataset));
   }
@@ -103,13 +108,13 @@ try {
   });
   $('gallery-mode').addEventListener('change', () => { mode = $('gallery-mode').value; drawGallery(); });
   drawGallery();
-  for (const e of examples) {
+  for (const e of sceneExamples) {
     const option = document.createElement('option'); option.value = e.id; option.textContent = `${datasetNames[e.dataset]} · ${e.id.split('-').at(-1)}`; $('scene-select').append(option);
   }
   try {
     viewer = new ReconstructionViewer({playbackRate: PLAYBACK_RATE});
     $('scene-select').addEventListener('change', () => viewer.load($('scene-select').value));
-    await viewer.load(examples[0].id);
+    await viewer.load(sceneExamples[0].id);
   } catch (error) {
     $('scene-status').hidden = false;
     $('scene-status').textContent = 'The 3D viewer needs WebGL. You can still explore every reconstruction in the videos above.';
@@ -121,7 +126,7 @@ try {
 }
 
 try {
-  const response = await fetch('assets/comparisons.json?v=20261010-overview-row');
+  const response = await fetch('assets/comparisons.json?v=20261010-interactive-scenes');
   if (!response.ok) throw new Error('Comparison manifest unavailable');
   const config = await response.json();
   function createComparison(clip, space) {
