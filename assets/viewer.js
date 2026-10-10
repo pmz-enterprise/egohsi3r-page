@@ -52,15 +52,16 @@ export class ReconstructionViewer {
   }
   resize(){const {width,height}=this.canvas.parentElement.getBoundingClientRect();this.renderer.setSize(width,height,false);this.camera.aspect=width/height;this.camera.updateProjectionMatrix();}
   clear(){for(const obj of [...this.group.children]){obj.geometry?.dispose();obj.material?.dispose();this.group.remove(obj);}}
-  async load(id){
+  async load(id,version=''){
     const request=++this.request;
     this.abort?.abort();this.abort=new AbortController();
     this.playing=false;$('scene-play').textContent='Play';$('scene-status').hidden=false;$('scene-status').textContent='Loading predicted geometry…';
     try{
       const directory=`assets/media/${id}/`;
-      const r=await fetch(directory+'scene.json',{signal:this.abort.signal});if(!r.ok)throw new Error('Scene metadata unavailable');
+      const suffix=version?`?v=${encodeURIComponent(version)}`:'';
+      const r=await fetch(directory+'scene.json'+suffix,{signal:this.abort.signal});if(!r.ok)throw new Error('Scene metadata unavailable');
       const meta=await r.json();
-      const b=await fetch(directory+meta.buffer,{signal:this.abort.signal});if(!b.ok)throw new Error('Scene buffer unavailable');
+      const b=await fetch(directory+meta.buffer+suffix,{signal:this.abort.signal});if(!b.ok)throw new Error('Scene buffer unavailable');
       const buffer=await b.arrayBuffer();if(this.request!==request)return;
       const arrays={};
       for(const [key,info] of Object.entries(meta.arrays)){

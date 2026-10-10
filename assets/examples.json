@@ -2,45 +2,13 @@
   {
     "id": "arctic-01",
     "dataset": "arctic",
-    "sequence": "s05/scissors_use_02",
-    "role": "test",
-    "fps": 30,
-    "frames": 150,
-    "frameStart": 152,
-    "frameEnd": 301,
-    "sampleId": "world150/arctic/test/s05/scissors_use_02/00152-00301",
-    "checkpointJob": 321,
-    "checkpointSha256": "c0a5d9a5b94d24e154cf1f19492b43f41731626de7871b501ec9dd77f956efc5",
-    "handInput": "Ground-truth boxes and visibility masks",
-    "intrinsics": "Dataset calibration supplied",
-    "prediction": "MANO pose, shape, translation, camera trajectory, dense scene pointmaps and contact probabilities are predicted by job321.",
-    "resetInterval": 20,
-    "ttt": true,
-    "seed": 42,
-    "handAlignment": "none",
-    "visibleHandFrames": [
-      150,
-      150
-    ],
-    "renderedHandFrames": 150,
-    "selection": "Chosen after visual quality review of genuine job321 predictions; no inference settings changed.",
-    "sceneFrames": 50,
-    "depthColorRange": [
-      0.5283443927764893,
-      0.7302625775337219
-    ],
-    "interactive3d": false
-  },
-  {
-    "id": "arctic-02",
-    "dataset": "arctic",
-    "sequence": "s05/capsulemachine_use_02",
+    "sequence": "s05/laptop_use_02",
     "role": "test",
     "fps": 30,
     "frames": 81,
-    "frameStart": 164,
-    "frameEnd": 244,
-    "sampleId": "cam81/arctic/test/s05/capsulemachine_use_02/00164-00244",
+    "frameStart": 569,
+    "frameEnd": 649,
+    "sampleId": "cam81/arctic/test/s05/laptop_use_02/00569-00649",
     "checkpointJob": 321,
     "checkpointSha256": "c0a5d9a5b94d24e154cf1f19492b43f41731626de7871b501ec9dd77f956efc5",
     "handInput": "Ground-truth boxes and visibility masks",
@@ -55,13 +23,47 @@
       81
     ],
     "renderedHandFrames": 81,
-    "selection": "Chosen after visual quality review of genuine job321 predictions; no inference settings changed.",
+    "selection": "Visual review of genuine predictions with unchanged inference settings.",
     "sceneFrames": 27,
     "depthColorRange": [
-      0.5113209366798401,
-      0.818144690990448
+      0.4499318599700928,
+      0.7690847754478454
     ],
-    "interactive3d": false
+    "interactive3d": true,
+    "mediaVersion": "20261010-arctic-examples"
+  },
+  {
+    "id": "arctic-02",
+    "dataset": "arctic",
+    "sequence": "s05/waffleiron_use_01",
+    "role": "test",
+    "fps": 30,
+    "frames": 81,
+    "frameStart": 164,
+    "frameEnd": 244,
+    "sampleId": "cam81/arctic/test/s05/waffleiron_use_01/00164-00244",
+    "checkpointJob": 321,
+    "checkpointSha256": "c0a5d9a5b94d24e154cf1f19492b43f41731626de7871b501ec9dd77f956efc5",
+    "handInput": "Ground-truth boxes and visibility masks",
+    "intrinsics": "Dataset calibration supplied",
+    "prediction": "MANO pose, shape, translation, camera trajectory, dense scene pointmaps and contact probabilities are predicted by job321.",
+    "resetInterval": 20,
+    "ttt": true,
+    "seed": 42,
+    "handAlignment": "none",
+    "visibleHandFrames": [
+      81,
+      81
+    ],
+    "renderedHandFrames": 81,
+    "selection": "Visual review of genuine predictions with unchanged inference settings.",
+    "sceneFrames": 27,
+    "depthColorRange": [
+      0.5400019764900208,
+      0.8375468850135803
+    ],
+    "interactive3d": false,
+    "mediaVersion": "20261010-arctic-examples"
   },
   {
     "id": "hot3d-01",

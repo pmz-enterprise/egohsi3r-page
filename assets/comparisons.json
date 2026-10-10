@@ -73,7 +73,7 @@
       "id": "arctic-01",
       "label": "ARCTIC \u00b7 Scissors",
       "sampleId": "world150/arctic/test/s05/scissors_use_02/00152-00301",
-      "rgb": "assets/media/arctic-01/rgb.mp4",
+      "rgb": "assets/media/world-arctic-01/rgb.mp4",
       "ours": "assets/media/world-arctic-01/ours.mp4",
       "methods": {
         "handflow": "assets/media/world-arctic-01/handflow.mp4",

@@ -1,4 +1,4 @@
-import { ReconstructionViewer } from './viewer.js?v=20261010-interactive-scenes';
+import { ReconstructionViewer } from './viewer.js?v=20261010-arctic-examples';
 
 const $ = (id) => document.getElementById(id);
 const PLAYBACK_RATE = 0.5;
@@ -21,10 +21,11 @@ const observer = new IntersectionObserver((entries) => {
 }, {threshold: 0.2});
 
 try {
-  const response = await fetch('assets/examples.json?v=20261010-interactive-scenes');
+  const response = await fetch('assets/examples.json?v=20261010-arctic-examples');
   if (!response.ok) throw new Error('Example manifest unavailable');
   const examples = await response.json();
   const sceneExamples = examples.filter(example => example.interactive3d);
+  const mediaURL = (example, name) => `assets/media/${example.id}/${name}${example.mediaVersion ? `?v=${encodeURIComponent(example.mediaVersion)}` : ''}`;
   function mediaStage(video, poster, className = '') {
     const stage = document.createElement('div');
     stage.className = `media-stage ${className}`;
@@ -39,8 +40,8 @@ try {
     const video = document.createElement('video');
     Object.assign(video, { muted: true, loop: true, playsInline: true, defaultPlaybackRate: PLAYBACK_RATE, playbackRate: PLAYBACK_RATE, preload: 'metadata' });
     video.dataset.preview = String(teaserPlaying);
-    video.src = `assets/media/${example.id}/hands.mp4`;
-    video.poster = `assets/media/${example.id}/poster.jpg`;
+    video.src = mediaURL(example, 'hands.mp4');
+    video.poster = mediaURL(example, 'poster.jpg');
     video.setAttribute('aria-label', `${name} hand reconstruction`);
     watchVideo(video);
     card.append(title, mediaStage(video, video.poster));
@@ -71,8 +72,8 @@ try {
       const video = document.createElement('video');
       Object.assign(video, { muted: true, loop: true, playsInline: true, defaultPlaybackRate: PLAYBACK_RATE, playbackRate: PLAYBACK_RATE, controls: true, preload: 'metadata' });
       video.dataset.preview = 'true';
-      video.src = `assets/media/${e.id}/${mode}.mp4`;
-      video.poster = `assets/media/${e.id}/${mode === 'channels' ? 'channels.jpg' : 'poster.jpg'}`;
+      video.src = mediaURL(e, `${mode}.mp4`);
+      video.poster = mediaURL(e, mode === 'channels' ? 'channels.jpg' : 'poster.jpg');
       video.setAttribute('aria-label', `${datasetNames[e.dataset]} ${mode} prediction, ${e.sequence}`);
       watchVideo(video);
       const caption = document.createElement('div'); caption.className = 'card-caption';
@@ -86,7 +87,7 @@ try {
         button.addEventListener('click', async () => {
           $('scene-select').value = e.id;
           $('explore').scrollIntoView({behavior: reducedMotion ? 'instant' : 'smooth'});
-          await viewer?.load(e.id);
+          await viewer?.load(e.id, e.mediaVersion);
         });
         caption.append(button);
       }
@@ -113,8 +114,13 @@ try {
   }
   try {
     viewer = new ReconstructionViewer({playbackRate: PLAYBACK_RATE});
-    $('scene-select').addEventListener('change', () => viewer.load($('scene-select').value));
-    await viewer.load(sceneExamples[0].id);
+    $('scene-select').addEventListener('change', () => {
+      const example = sceneExamples.find(e => e.id === $('scene-select').value);
+      viewer.load(example.id, example.mediaVersion);
+    });
+    const initialExample = sceneExamples.find(e => e.id === 'hot3d-01') || sceneExamples[0];
+    $('scene-select').value = initialExample.id;
+    await viewer.load(initialExample.id, initialExample.mediaVersion);
   } catch (error) {
     $('scene-status').hidden = false;
     $('scene-status').textContent = 'The 3D viewer needs WebGL. You can still explore every reconstruction in the videos above.';
@@ -126,7 +132,7 @@ try {
 }
 
 try {
-  const response = await fetch('assets/comparisons.json?v=20261010-interactive-scenes');
+  const response = await fetch('assets/comparisons.json?v=20261010-arctic-examples');
   if (!response.ok) throw new Error('Comparison manifest unavailable');
   const config = await response.json();
   function createComparison(clip, space) {
