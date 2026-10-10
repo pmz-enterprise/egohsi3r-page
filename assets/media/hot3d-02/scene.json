@@ -56,24 +56,24 @@
       "byteOffset": 692432,
       "shape": [
         27,
-        1800,
+        8000,
         3
       ],
       "dtype": "<f4",
-      "bytes": 583200
+      "bytes": 2592000
     },
     "colors": {
-      "byteOffset": 1275632,
+      "byteOffset": 3284432,
       "shape": [
         27,
-        1800,
+        8000,
         3
       ],
       "dtype": "|u1",
-      "bytes": 145800
+      "bytes": 648000
     },
     "pointCounts": {
-      "byteOffset": 1421432,
+      "byteOffset": 3932432,
       "shape": [
         27
       ],
@@ -144,8 +144,14 @@
   "units": "meters",
   "coordinateSystem": "OpenCV first-clip-camera world",
   "normalization": "One inverse-first-predicted-camera rigid transform, no pose or scale alignment",
-  "cloudSampling": "Per-frame predicted pointmap, spatial stride 5; confidence >=1.5; up to 1800 points. No temporal fusion.",
+  "cloudSampling": "Per-frame predicted pointmap, spatial stride 2; confidence >=1.5; up to 8000 points. No temporal fusion.",
   "contact": "Predicted per-vertex contact probabilities; continuous 0 to 1",
   "checkpointJob": 321,
-  "checkpointSha256": "c0a5d9a5b94d24e154cf1f19492b43f41731626de7871b501ec9dd77f956efc5"
+  "checkpointSha256": "c0a5d9a5b94d24e154cf1f19492b43f41731626de7871b501ec9dd77f956efc5",
+  "displayDefaults": {
+    "pointSizePixels": 3,
+    "colorSpace": "Stored RGB interpreted as sRGB for display",
+    "framing": "Current-frame visible hands and nearby scene points; Fit scene includes the whole pointmap. Framing changes only the virtual camera.",
+    "background": "Light or dark background chosen from the initial point colors for contrast."
+  }
 }

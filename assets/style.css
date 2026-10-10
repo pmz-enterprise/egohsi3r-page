@@ -71,3 +71,8 @@ body{font-family:Inter,"Segoe UI",-apple-system,BlinkMacSystemFont,sans-serif;ba
 .comparison-card .compare-playback { margin-top:8px; padding:10px 12px; }
 @media(max-width:900px) { .camera-method-grid,.world-method-grid { grid-template-columns:repeat(var(--method-count),minmax(154px,1fr)); } }
 @media(max-width:720px) { .comparison-section { padding-top:30px; padding-bottom:30px; } .comparison-section .section-intro h2 { font-size:24px; } .compact-toolbar select { min-width:150px; } .method-panel figcaption { font-size:10px; } }
+
+.viewer-stage { background:#17202b; }
+.point-size-control input[type=range] { width:76px; min-width:0; cursor:pointer; }
+.point-size-control { gap:8px; }
+@media(max-width:720px) { .point-size-control input[type=range] { width:62px; } }

@@ -47,7 +47,7 @@
   <div class="viewer-shell">
     <div class="viewer-topbar"><label>Sequence <select id="scene-select" aria-label="3D sequence"></select></label><div class="viewer-tools"><button id="fit-scene" type="button">Fit scene</button><button id="fit-hands" type="button">Fit hands</button><button id="reset-view" type="button">Reset view</button></div></div>
     <div class="viewer-stage"><canvas id="scene-canvas" aria-label="Interactive 3D hand-scene reconstruction. Drag to orbit; scroll to zoom." tabindex="0"></canvas><p id="scene-status" class="scene-status" role="status">Loading 3D viewer…</p></div>
-    <div class="viewer-options"><label><input id="show-points" type="checkbox" checked> Scene points</label><label><input id="show-contact" type="checkbox" checked> Contact colors</label><label><input id="show-camera" type="checkbox" checked> Camera trajectory</label><label><input id="accumulate" type="checkbox"> Accumulate scene</label></div>
+    <div class="viewer-options"><label><input id="show-points" type="checkbox" checked> Scene points</label><label class="point-size-control">Point size <input id="point-size" type="range" min="1" max="7" step="0.5" value="3" aria-label="Scene point size"></label><label><input id="show-contact" type="checkbox" checked> Contact colors</label><label><input id="show-camera" type="checkbox"> Camera trajectory</label><label><input id="accumulate" type="checkbox"> Accumulate scene</label></div>
     <div class="playback"><button id="scene-play" class="play-button" type="button" aria-label="Play 3D animation">Play</button><input id="scene-time" type="range" min="0" max="1" value="0" step="1" aria-label="3D animation frame"><output id="scene-frame">Frame —</output></div>
   </div>
 </div></section>
