@@ -1,4 +1,4 @@
-import { ReconstructionViewer } from './viewer.js?v=20261010-half-speed';
+import { ReconstructionViewer } from './viewer.js?v=20261010-overview-row';
 
 const $ = (id) => document.getElementById(id);
 const PLAYBACK_RATE = 0.5;
@@ -21,7 +21,7 @@ const observer = new IntersectionObserver((entries) => {
 }, {threshold: 0.2});
 
 try {
-  const response = await fetch('assets/examples.json?v=20261010-half-speed');
+  const response = await fetch('assets/examples.json?v=20261010-overview-row');
   if (!response.ok) throw new Error('Example manifest unavailable');
   const examples = await response.json();
   function mediaStage(video, poster, className = '') {
@@ -121,7 +121,7 @@ try {
 }
 
 try {
-  const response = await fetch('assets/comparisons.json?v=20261010-half-speed');
+  const response = await fetch('assets/comparisons.json?v=20261010-overview-row');
   if (!response.ok) throw new Error('Comparison manifest unavailable');
   const config = await response.json();
   function createComparison(clip, space) {
@@ -150,7 +150,7 @@ try {
     const clock = document.createElement('output'); clock.textContent = '0.00 s';
     const speedLabel = document.createElement('label'); speedLabel.textContent = 'Speed ';
     const speed = document.createElement('select'); speed.setAttribute('aria-label', `${clip.label} playback speed`);
-    for (const value of [String(PLAYBACK_RATE / 2), String(PLAYBACK_RATE)]) { const option = document.createElement('option'); option.value = value; option.textContent = `${value}×`; option.selected = Number(value) === PLAYBACK_RATE; speed.append(option); }
+    for (const value of [String(PLAYBACK_RATE / 2), String(PLAYBACK_RATE), '1']) { const option = document.createElement('option'); option.value = value; option.textContent = `${value}×`; option.selected = Number(value) === PLAYBACK_RATE; speed.append(option); }
     speedLabel.append(speed); controls.append(play, timeline, clock, speedLabel);
     card.append(grid, video, controls);
     $(`${space}-comparison-list`).append(card);
