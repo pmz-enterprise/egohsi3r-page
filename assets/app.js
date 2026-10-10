@@ -1,4 +1,4 @@
-import { ReconstructionViewer } from './viewer.js';
+import { ReconstructionViewer } from './viewer.js?v=20261010-half-speed';
 
 const $ = (id) => document.getElementById(id);
 const PLAYBACK_RATE = 0.5;
@@ -21,7 +21,7 @@ const observer = new IntersectionObserver((entries) => {
 }, {threshold: 0.2});
 
 try {
-  const response = await fetch('assets/examples.json');
+  const response = await fetch('assets/examples.json?v=20261010-half-speed');
   if (!response.ok) throw new Error('Example manifest unavailable');
   const examples = await response.json();
   function mediaStage(video, poster, className = '') {
@@ -121,7 +121,7 @@ try {
 }
 
 try {
-  const response = await fetch('assets/comparisons.json');
+  const response = await fetch('assets/comparisons.json?v=20261010-half-speed');
   if (!response.ok) throw new Error('Comparison manifest unavailable');
   const config = await response.json();
   function createComparison(clip, space) {
