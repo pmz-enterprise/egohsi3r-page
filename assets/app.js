@@ -1,7 +1,7 @@
 import { ReconstructionViewer } from './viewer.js';
 
 const $ = (id) => document.getElementById(id);
-const datasetNames = { arctic: 'ARCTIC', hot3d: 'HOT3D', dexycb: 'DexYCB', hoi4d: 'HOI4D', h2o: 'H2O', taco: 'TACO' };
+const datasetNames = { arctic: 'ARCTIC', hot3d: 'HOT3D', dexycb: 'DexYCB', h2o: 'H2O', taco: 'TACO' };
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 let teaserPlaying = !reducedMotion;
 const watchVideo = (video) => video.addEventListener('error', () => {

@@ -56,24 +56,24 @@
       "byteOffset": 1016936,
       "shape": [
         40,
-        8000,
+        24000,
         3
       ],
       "dtype": "<f4",
-      "bytes": 3840000
+      "bytes": 11520000
     },
     "colors": {
-      "byteOffset": 4856936,
+      "byteOffset": 12536936,
       "shape": [
         40,
-        8000,
+        24000,
         3
       ],
       "dtype": "|u1",
-      "bytes": 960000
+      "bytes": 2880000
     },
     "pointCounts": {
-      "byteOffset": 5816936,
+      "byteOffset": 15416936,
       "shape": [
         40
       ],
@@ -170,7 +170,7 @@
   "units": "meters",
   "coordinateSystem": "OpenCV first-clip-camera world",
   "normalization": "One inverse-first-predicted-camera rigid transform, no pose or scale alignment",
-  "cloudSampling": "Per-frame predicted pointmap, spatial stride 2; confidence >=1.5; up to 8000 points. No temporal fusion.",
+  "cloudSampling": "Per-frame predicted pointmap, spatial stride 1; confidence >=1.5; up to 24000 points. No temporal fusion.",
   "contact": "Predicted per-vertex contact probabilities; continuous 0 to 1",
   "checkpointJob": 321,
   "checkpointSha256": "c0a5d9a5b94d24e154cf1f19492b43f41731626de7871b501ec9dd77f956efc5",
