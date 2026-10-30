@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="assets/vendor/fonts.css">
   <link rel="stylesheet" href="assets/vendor/bulma.min.css">
   <link rel="stylesheet" href="assets/vendor/academic-template.css">
-  <link rel="stylesheet" href="assets/style.css?v=20261010-arctic-examples">
+  <link rel="stylesheet" href="assets/style.css?v=20261030-compact-demo-method">
 </head>
 <body>
 <a class="skip-link" href="#results">Skip to results</a>
@@ -30,6 +30,28 @@
       </div>
     </div>
   </div>
+</section>
+<section class="container section demo-section" id="in-the-wild" aria-label="In-the-wild demo">
+  <div class="demo-player">
+    <video controls playsinline loop preload="metadata" poster="assets/demo-poster.jpg" width="1440" height="1080" aria-label="EgoHSI3R in-the-wild hand-scene interaction reconstruction demo">
+      <source src="assets/demo-web.mp4" type="video/mp4">
+      Your browser does not support embedded video. <a href="assets/demo-web.mp4">Download the demo video</a>.
+    </video>
+  </div>
+</section>
+<section class="container section abstract-section" id="abstract" aria-labelledby="abstract-title">
+  <div class="section-intro"><h2 id="abstract-title">Abstract</h2></div>
+  <div class="abstract-content">
+    <p>Egocentric videos offer an abundant source of hand-scene interactions for embodied learning, which requires recovering hands, camera, and scene consistently in a shared 3D world. Existing methods focus on either camera-frame hands or world-space hand trajectories, without jointly recovering the scene pointmaps or interaction information. Building a complete reconstruction from such specialized predictions therefore typically requires per-sequence optimization. We propose EgoHSI3R, a unified feed-forward framework for online 4D hand-scene interaction reconstruction from egocentric monocular video. To jointly recover these components, it maintains a recurrent scene representation that accumulates geometric evidence over time and provides a shared world space and scale. We introduce hand-centric prompts that fuse pretrained hand priors and local scene context, while MANO vertex queries attend to scene features to predict dense per-vertex contact. These designs enable a single network to jointly estimate camera motion, dense scene geometry, world-space bilateral MANO hands, and per-vertex hand contact. Despite operating causally, EgoHSI3R achieves the lowest world-space hand joint error on ARCTIC among the evaluated methods, while offering faster inference than existing world-space hand reconstruction pipelines and competitive camera and scene reconstruction accuracy.</p>
+  </div>
+</section>
+<section class="container section pipeline-section" id="pipeline" aria-labelledby="pipeline-title">
+  <div class="section-intro"><h2 id="pipeline-title">Method</h2></div>
+  <figure class="pipeline-figure">
+    <a href="assets/pipeline.pdf" target="_blank" rel="noopener" aria-label="Open the EgoHSI3R pipeline diagram as a PDF">
+      <img src="assets/pipeline.png" width="2800" height="834" loading="lazy" decoding="async" alt="EgoHSI3R pipeline: scene and hand encoders process egocentric video; a hand prompt builder and recurrent decoder feed scene, MANO, and contact heads to reconstruct the world scene, hands, and contact.">
+    </a>
+  </figure>
 </section>
 <section class="hero teaser">
   <div class="container is-max-desktop">

@@ -76,3 +76,22 @@ body{font-family:Inter,"Segoe UI",-apple-system,BlinkMacSystemFont,sans-serif;ba
 .point-size-control input[type=range] { width:76px; min-width:0; cursor:pointer; }
 .point-size-control { gap:8px; }
 @media(max-width:720px) { .point-size-control input[type=range] { width:62px; } }
+
+/* Project overview, before the dataset examples. */
+.demo-section { padding-top:36px; padding-bottom:36px; }
+.demo-player { max-width:800px; margin:0 auto; overflow:hidden; border:1px solid var(--line); border-radius:12px; background:#fff; box-shadow:0 8px 28px #0f172a08; }
+.demo-player video { display:block; width:100%; height:auto; aspect-ratio:4/3; object-fit:contain; }
+.abstract-section { max-width:1000px; padding-top:44px; padding-bottom:40px; }
+.abstract-content { font-size:16px; line-height:1.85; color:#334155; }
+.abstract-content p { margin:0; }
+.pipeline-section { padding-top:36px; padding-bottom:44px; }
+.pipeline-figure { margin:0; }
+.pipeline-figure>a { display:block; }
+.pipeline-figure img { display:block; width:100%; height:auto; }
+@media(max-width:720px) {
+  .demo-section { padding-top:28px; padding-bottom:24px; }
+  .demo-player { border-radius:8px; }
+  .abstract-section { padding-top:32px; padding-bottom:24px; }
+  .abstract-content { font-size:14px; line-height:1.8; }
+  .pipeline-section { padding-top:30px; padding-bottom:28px; }
+}
