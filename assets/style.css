@@ -82,6 +82,7 @@ body{font-family:Inter,"Segoe UI",-apple-system,BlinkMacSystemFont,sans-serif;ba
 .publication-authors span { display:inline-block; }
 .publication-authors a { color:var(--accent); }
 .publication-authors a:hover { text-decoration:underline; }
+.author-note { margin:0 auto 8px; font-size:12px; line-height:1.6; color:var(--muted); }
 .publication-venue { margin:0 auto 18px; font-size:13px; line-height:1.6; color:var(--muted); }
 .publication-header .contact-note { margin:0 auto 18px; font-size:14px; color:var(--muted); }
 .contact-note a { color:var(--accent); }
