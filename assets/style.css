@@ -82,6 +82,7 @@ body{font-family:Inter,"Segoe UI",-apple-system,BlinkMacSystemFont,sans-serif;ba
 .publication-authors span { display:inline-block; }
 .publication-authors a { color:var(--accent); }
 .publication-authors a:hover { text-decoration:underline; }
+.publication-venue { margin:0 auto 18px; font-size:13px; line-height:1.6; color:var(--muted); }
 .publication-header .contact-note { margin:0 auto 18px; font-size:14px; color:var(--muted); }
 .contact-note a { color:var(--accent); }
 .contact-note a { overflow-wrap:anywhere; }
@@ -97,6 +98,7 @@ body{font-family:Inter,"Segoe UI",-apple-system,BlinkMacSystemFont,sans-serif;ba
 .pipeline-figure img { display:block; width:100%; height:auto; }
 @media(max-width:720px) {
   .publication-authors { max-width:370px; font-size:15px; }
+  .publication-venue { font-size:12px; }
   .publication-header .contact-note { font-size:13px; }
   .demo-section { padding-top:28px; padding-bottom:24px; }
   .demo-player { border-radius:8px; }
