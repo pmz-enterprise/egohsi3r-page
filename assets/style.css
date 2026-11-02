@@ -78,6 +78,11 @@ body{font-family:Inter,"Segoe UI",-apple-system,BlinkMacSystemFont,sans-serif;ba
 @media(max-width:720px) { .point-size-control input[type=range] { width:62px; } }
 
 /* Project overview, before the dataset examples. */
+.publication-authors { margin:0 auto 6px; font-size:18px; line-height:1.8; color:var(--ink); }
+.publication-authors span { display:inline-block; }
+.publication-header .contact-note { margin:0 auto 18px; font-size:14px; color:var(--muted); }
+.contact-note a { color:var(--accent); }
+.contact-note a { overflow-wrap:anywhere; }
 .demo-section { padding-top:36px; padding-bottom:36px; }
 .demo-player { max-width:800px; margin:0 auto; overflow:hidden; border:1px solid var(--line); border-radius:12px; background:#fff; box-shadow:0 8px 28px #0f172a08; }
 .demo-player video { display:block; width:100%; height:auto; aspect-ratio:4/3; object-fit:contain; }
@@ -89,6 +94,8 @@ body{font-family:Inter,"Segoe UI",-apple-system,BlinkMacSystemFont,sans-serif;ba
 .pipeline-figure>a { display:block; }
 .pipeline-figure img { display:block; width:100%; height:auto; }
 @media(max-width:720px) {
+  .publication-authors { max-width:370px; font-size:15px; }
+  .publication-header .contact-note { font-size:13px; }
   .demo-section { padding-top:28px; padding-bottom:24px; }
   .demo-player { border-radius:8px; }
   .abstract-section { padding-top:32px; padding-bottom:24px; }
